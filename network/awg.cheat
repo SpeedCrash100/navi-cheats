@@ -4,6 +4,7 @@
 sudo systemctl start awg-quick@`systemd-escape --path <profile>`
 
 # Disconnect the profile
-sudo systemctl stop awg-quick@`systemd-escape --path <profile>`
+sudo systemctl stop awg-quick@`systemd-escape --path <active_profile>`
 
 $ profile: find ~/.local/etc/awg/ -name '*.conf'  
+$ active_profile: systemctl list-units --type service --state active | grep awg-quick | awk '{print $1}' | xargs -n1 systemd-escape --unescape --path --instance
