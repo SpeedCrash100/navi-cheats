@@ -1,0 +1,9 @@
+% network, amneziawg
+
+# Connect using profile
+sudo systemctl start awg-quick@`systemd-escape --path <profile>`
+
+# Disconnect the profile
+sudo systemctl stop awg-quick@`systemd-escape --path <profile>`
+
+$ profile: find ~/.local/etc/awg/ -name '*.conf'  
