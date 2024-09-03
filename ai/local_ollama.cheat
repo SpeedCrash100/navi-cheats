@@ -13,6 +13,6 @@ curl 'http://localhost:11434/api/tags' | jq
 curl 'http://localhost:11434/api/tags' | jq .models | jq -r '.[].name'
 
 # Show model info
-curl 'http://localhost:11434/api/show' -d '{ "name": "<available_models>" }'
+curl 'http://localhost:11434/api/show' -d '{ "name": "<available_models>" }' | jq
 
 $ available_models : curl 'http://localhost:11434/api/tags' | jq .models | jq -r '.[].name'
