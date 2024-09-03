@@ -2,3 +2,17 @@
 
 # Pull a model
 curl 'http://localhost:11434/api/pull' -d '{ "name": "<model_to_pull>" }'
+
+# Get current running models
+curl 'http://localhost:11434/api/ps' | jq
+
+# Get all models full
+curl 'http://localhost:11434/api/tags' | jq
+
+# Get all models (only names)
+curl 'http://localhost:11434/api/tags' | jq .models | jq -r '.[].name'
+
+# Show model info
+curl 'http://localhost:11434/api/show' -d '{ "name": "<available_models>" }'
+
+$ available_models : curl 'http://localhost:11434/api/tags' | jq .models | jq -r '.[].name'
