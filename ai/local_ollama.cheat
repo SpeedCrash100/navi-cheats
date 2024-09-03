@@ -1,0 +1,4 @@
+% ai, ollama, local
+
+# Pull a model
+curl 'http://localhost:11434/api/pull' -d '{ "name": "<model_to_pull>" }'
